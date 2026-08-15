@@ -252,11 +252,23 @@ export function resolveStation(input: string): Station | undefined {
 
 export function formatTimeAmPm(value: string): string {
   if (!value || value === "Start" || value === "End") return value;
-  const [h, m] = value.split(":").map(Number);
-  if (h === undefined || Number.isNaN(h)) return value;
+
+  // ISO timestamps (e.g. LastUpdated) render as local clock time.
+  if (value.includes("T")) {
+    const parsed = new Date(value);
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" });
+    }
+  }
+
+  const [rawH, rawM] = value.split(":");
+  const h = Number(rawH);
+  const m = Number(rawM);
+  if (Number.isNaN(h)) return value;
+  const minutes = Number.isNaN(m) ? 0 : m;
   const suffix = h >= 12 ? "PM" : "AM";
   const hour12 = h % 12 === 0 ? 12 : h % 12;
-  return `${String(hour12).padStart(2, "0")}:${String(m ?? 0).padStart(2, "0")} ${suffix}`;
+  return `${String(hour12).padStart(2, "0")}:${String(minutes).padStart(2, "0")} ${suffix}`;
 }
 
 export { toMinutes, toHHMM };
