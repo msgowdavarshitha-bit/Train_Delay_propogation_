@@ -130,15 +130,15 @@
 }
 
 .light {
-  --background: oklch(0.975 0.006 250);
-  --foreground: oklch(0.22 0.03 265);
+  --background: oklch(0.975 0.008 285);
+  --foreground: oklch(0.2 0.04 285);
   --surface: oklch(1 0 0);
-  --surface-2: oklch(0.965 0.008 250);
+  --surface-2: oklch(0.965 0.012 285);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 265);
+  --card-foreground: oklch(0.2 0.04 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 265);
-  --primary: oklch(0.55 0.19 258);
+  --popover-foreground: oklch(0.2 0.04 285);
+  --primary: oklch(0.53 0.24 277);
   --primary-foreground: oklch(0.99 0.005 250);
   --secondary: oklch(0.945 0.012 250);
   --secondary-foreground: oklch(0.28 0.03 265);
