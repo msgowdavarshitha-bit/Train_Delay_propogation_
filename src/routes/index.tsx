@@ -81,12 +81,12 @@ function Landing() {
               Karnataka rail network · live
             </StatusBadge>
             <h1 className="mt-5 text-4xl leading-[1.05] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Know the delay
+              Predict the delay
               <span className="text-gradient block">before it reaches you.</span>
             </h1>
             <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
-              RailSense fuses historical delay data, live running status and a delay-propagation engine
-              into one command center for trains across Karnataka.
+              Know and plan your journey — RailSense fuses historical delay data, live running status and a
+              delay-propagation engine into one command center for Karnataka trains.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
